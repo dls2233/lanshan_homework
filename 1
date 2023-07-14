@@ -1,0 +1,43 @@
+import org.junit.Test;
+
+public class Main{
+    //1预习题
+    @Test
+    public void text1(){
+        String str="123";
+        String str1="123";
+        String str2=new String("123");
+        System.out.println(str==str1);//true
+        System.out.println(str==str2);//false
+        /*
+            第一个为true的原因：str在赋值时，在常量池中创建了一个值为“123”的对象，该对象有一个地址，str1
+            在赋值时检测到常量池中有“123”的对象，则str1直接赋值为该对象的地址值，此时str与str1的地址值相
+            同，所以在比较地址值时，返回true
+            第二个为false的原因：str2使用new在堆空间中开辟了新的内存，并创建了新的对象，在常量池中找到“12
+            3”后将该值存放在新的对象中（若不存在则创建一个的值），并得到一个新的地址，该地址与str，str1的地
+            址不同，所以在比较时，返回false
+         */
+    }
+    //2.算法
+    //1.两数之和
+    public int[] twoSum(int[] nums, int target) {
+        int[] num = new int[2];
+        for (int i = 0; i < nums.length-1; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    num[0] = i;
+                    num[1] = j;
+                    return num;
+                }
+            }
+        }
+        return num;
+    }
+    //2.回文数
+    public boolean isPalindrome(int x) {
+        Integer X=x;
+        String str=X.toString();
+        String str1=new StringBuffer(str).reverse().toString();
+        return str1.equals(str);
+    }
+}
