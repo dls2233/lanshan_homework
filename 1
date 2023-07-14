@@ -29,7 +29,7 @@ public class Main{
                     num[1] = j;
                     return num;
                 }
-            }
+            }//暴力模拟
         }
         return num;
     }
@@ -37,7 +37,7 @@ public class Main{
     public boolean isPalindrome(int x) {
         Integer X=x;
         String str=X.toString();
-        String str1=new StringBuffer(str).reverse().toString();
+        String str1=new StringBuffer(str).reverse().toString();//利用StringBuffer中的reverse方法实现字符串调转
         return str1.equals(str);
     }
 }
